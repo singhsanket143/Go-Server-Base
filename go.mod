@@ -1,4 +1,4 @@
-module github.com/sikozonpc/social
+module GoTwitter
 
 go 1.22.0
 
@@ -23,7 +23,7 @@ require (
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 )
 
-require (4532
+require (
 	github.com/KyleBanks/depth v1.2.1 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/go-openapi/jsonpointer v0.21.0 // indirect

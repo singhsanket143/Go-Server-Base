@@ -1,16 +1,16 @@
 package main
 
 import "log"
-import "github.com/singhsanket143/Go-Server-Base/types"
+import "GoTwitter/types"
 
 func main() {
-	cfg := config{
-		addr: ":8080",
+	cfg := types.Config{
+		Addr: ":8080",
 	}
 
-	app := &application{
-		config: cfg,
+	app := &types.Application{
+		Config: cfg,
 	}
 
-	log.Fatal(app.run())
+	log.Fatal(app.Run())
 }

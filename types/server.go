@@ -4,35 +4,35 @@ import "net/http"
 import "time"
 import "log"
 
-type application struct {
-	config config
+type Application struct {
+	Config Config
 }
 
-type config struct {
-	addr string
+type Config struct {
+	Addr string
 }
 
-func (app *application) pingHandler (w http.ResponseWriter, r *http.Request) {
+func (app *Application) pingHandler (w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte("ok"))
 	return
 }
 
-func (app *application) run() error {
+func (app *Application) Run() error {
 
 	router := http.NewServeMux()
 
-	router.HandleFunc("GET /v1/ping", app.pingHandler)
+	router.HandleFunc("/v1/ping", app.pingHandler)
 	
 
 	server := &http.Server{
-		Addr: app.config.addr,
+		Addr: app.Config.Addr,
 		Handler: router,
 		WriteTimeout: time.Second * 30,
 		ReadTimeout: time.Second * 10,
 		IdleTimeout: time.Minute,
 	}
 
-	log.Printf("Server has starter at %s", app.config.addr)
+	log.Printf("Server has started at %s", app.Config.Addr)
 
 	return server.ListenAndServe()
 }
