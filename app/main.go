@@ -1,7 +1,7 @@
 package main
 
 import "log"
-import "https://github.com/singhsanket143/Go-Server-Base/types"
+import "github.com/singhsanket143/Go-Server-Base/types"
 
 func main() {
 	cfg := config{

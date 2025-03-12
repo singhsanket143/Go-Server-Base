@@ -3,6 +3,6 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "server",
     srcs = ["server.go"],
-    importpath = "https://github.com/singhsanket143/Go-Server-Base/types",
+    importpath = "github.com/singhsanket143/Go-Server-Base/types",
     visibility = ["//visibility:public"],
 )
